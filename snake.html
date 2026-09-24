@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#1e3c72">
+  <title>Campus Connect — Змейка</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo">
+      <span class="logo-main">Campus Connect</span>
+      <span class="logo-sub">Змейка</span>
+    </div>
+    <div class="header-right">
+      <a href="dashboard.html" class="btn-secondary" style="text-decoration:none; padding:8px 14px; border-radius:8px;">← В кабинет</a>
+    </div>
+  </header>
+
+  <main class="dashboard" style="max-width: 600px; text-align:center;">
+
+    <div id="snake-status-block" class="card" style="margin-bottom:20px;">
+      <h2 style="margin-bottom:8px;">🐉 Средневековая змейка</h2>
+      <p class="muted" id="snake-status-text">Загрузка...</p>
+    </div>
+
+    <div id="snake-game-block" class="card" style="padding:16px;">
+      <canvas id="snake-canvas" width="320" height="320" style="width:100%; max-width:320px; height:auto; background:#0f0c29; border-radius:12px; border:2px solid rgba(255,255,255,0.15); display:block; margin:0 auto;"></canvas>
+
+      <div id="snake-score" style="margin-top:14px; font-size:20px; font-weight:800; color:#fff;">
+        Очки: <span id="snake-score-value">0</span>
+      </div>
+
+      <div id="snake-controls" style="margin-top:16px;">
+        <div style="display:grid; grid-template-columns:repeat(3, 60px); gap:8px; justify-content:center;">
+          <div></div>
+          <button class="btn-secondary" data-dir="up" type="button" style="font-size:22px;">↑</button>
+          <div></div>
+          <button class="btn-secondary" data-dir="left" type="button" style="font-size:22px;">←</button>
+          <button class="btn-secondary" data-dir="down" type="button" style="font-size:22px;">↓</button>
+          <button class="btn-secondary" data-dir="right" type="button" style="font-size:22px;">→</button>
+        </div>
+      </div>
+
+      <button id="snake-start-btn" class="btn-primary" style="margin-top:20px; width:100%;" type="button">▶️ Начать игру</button>
+
+      <p class="muted" style="margin-top:14px; font-size:13px;">
+        Управление: стрелки на клавиатуре или кнопки. Собирай 🍎, не врезайся в стены и хвост.
+      </p>
+    </div>
+
+    <div id="snake-result-block" class="card hidden" style="margin-top:20px;">
+      <h2 id="snake-result-title" style="margin-bottom:12px;">Игра окончена!</h2>
+      <p id="snake-result-status" style="font-size:22px; font-weight:800; margin:10px 0;"></p>
+      <p id="snake-result-score" class="muted" style="font-size:16px;"></p>
+
+      <button id="snake-save-btn" class="btn-primary" style="margin-top:16px; width:100%;" type="button">💾 Сохранить результат</button>
+      <button id="snake-again-btn" class="btn-secondary" style="margin-top:10px; width:100%;" type="button">🔁 Играть ещё</button>
+      <a href="dashboard.html" class="btn-register" style="margin-top:10px; display:block;">← В кабинет</a>
+    </div>
+
+  </main>
+
+  <script type="module" src="snake.js"></script>
+</body>
+</html>
